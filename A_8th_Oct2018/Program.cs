@@ -14,32 +14,31 @@ namespace A_8th_Oct2018
         static void Main(string[] args)
         {
             string username;
+            //Console.WriteLine("Enter your site name");
+            string sitename = "shubhamtrial";//Console.ReadLine();
             SharePointSiteData spdata = new SharePointSiteData();
-            Console.WriteLine("Enter USerName");
-            username= Console.ReadLine()+"@acuvate.com";
+            //Console.WriteLine("Enter USerName");
+            username= /*Console.ReadLine()+*/"arvind.torvi@acuvate.com";
             Console.WriteLine("Enter your password.");
             SecureString password = GetPassword();
-            string Url = "https://acuvatehyd.sharepoint.com/teams/shubhamtrial";
+            //string site = "shubhamtrial";
+            string Url = "https://acuvatehyd.sharepoint.com/teams/"+sitename;
             spdata.GetData(Url,username,password);
 
-            //Console.WriteLine("Do you want to create new site  press .yes to continue or .any key to exit");
-            //string answer = Console.ReadLine();
-            //if (answer.ToUpper() == "YES")
-            //{
-            //    spdata.CreatenewSubsite(Url, username, password);
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Press any key to exit");
-                
-                
-            //}
-            Console.WriteLine("List infrormation: ");
-            spdata.GetsiteList(Url, username, password);
-            spdata.CreateSharePointList(Url, username, password);
-            spdata.DeleteSpList(Url, username, password);
-            spdata.CreatenewFolder(Url, username, password);
+            
+            //Console.WriteLine("List infrormation: ");
+            //spdata.GetsiteList(Url, username, password);
+            //spdata.CreateSharePointList(Url, username, password);
+            //spdata.DeleteSpList(Url, username, password);
+            //spdata.CreatenewFolder(Url, username, password);
+            //spdata.AddField(Url, username, password);
+            //spdata.DeleteField(Url, username, password);
+            //spdata.Getpath(Url, username, password);
+            //spdata.AddListItem(Url, username, password);
+            spdata.GetUsers(Url, username, password);
             Console.ReadKey();
+
+
         }
         private static SecureString GetPassword()
         {
